@@ -15,8 +15,6 @@ https://<域名>/gen?base80=<URLENCODE(vless80)>\&base443=<URLENCODE(vless443)>
 
 示例（PowerShell）：
 ```powershell
-$b80 = 'vless://UUID@origin.example.com:80?encryption=none&type=ws&security=none&host=origin.example.com&path=%2F#BASE80'
-$b443 = 'vless://UUID@origin.example.com:443?encryption=none&type=ws&security=tls&host=origin.example.com&path=%2F#BASE443'
 $url = 'https://<你的域名>/gen?base80=' + [System.Uri]::EscapeDataString($b80) + '&base443=' + [System.Uri]::EscapeDataString($b443)
 curl -s $url
 ```
